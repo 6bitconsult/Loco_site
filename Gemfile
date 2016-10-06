@@ -15,6 +15,8 @@ group :development do
 
   # Windows
   gem 'wdm', '~> 0.1.1', require: 'wdm' if RUBY_PLATFORM =~ /mswin|mingw/i
+  
+  gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 end
 
 group :misc do
