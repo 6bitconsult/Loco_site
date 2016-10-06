@@ -32,25 +32,61 @@ published: true
 
 {% block content/main, short_name: true %}
 
-{% editable_model projects %}
-<div class="row">
-  <div class="col-sm-12">
-    {% for project in contents.projects %}
-    <div class="media">
-      <div class="media-left">
-        <img class="media-object" src="{{ project.image.url | default: 'http://loremflickr.com/100/100' | resize: '100x100#' }}" alt="{{ project.name }}">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{ project.name }}</h4>
-        <p><strong>Client:</strong> {{ project.client }}
-        <div>
-          {{ project.description }}
+{% block page_title %}
+  <!-- Page Title -->
+  <section class="breadcrumb-wrap">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>Project</h1>
         </div>
       </div>
     </div>
-    {% endfor %}
-  </div>
-</div>
+  </section>
+{% endblock %}
+
+
+
+{% editable_model projects %}
+<section class="page-wrap blog-post clearfix">
+    <div class="container">
+      <div class="row">
+        <main class="main-content margin70">
+          <div class="content">
+            <div class="filter-wrap">
+              <ul class="filter">
+                <li class="active"><a href="#">All</a></li>
+                {% for projects_category in contents.projects_category %}
+                  <li><a data-filter=".{{projects_category.title}}" href="#">{{projects_category.title}}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="portfolio popup-gallery">
+
+              {% for project in contents.projects %}
+
+                <div class="col-sm-4 col-xs-12 item {{ project.category.title }}">
+                  <article>
+                    <p class="media">
+                      <a href="{{ project.image.url | default: 'http://loremflickr.com/100/100' | resize: '470x400#' }}" class="popup" data-source="{{ project.image.url | default: 'http://loremflickr.com/100/100' | resize: '470x400#' }}">
+                        <img src="{{ project.image.url | default: 'http://loremflickr.com/100/100' | resize: '470x400#' }}" alt="{{ project.name }}">
+                      </a>
+                    </p>
+                    <h3>
+                      <a href="projects-detail?title={{ project.name }}">{{ project.name }}</a>
+                    </h3>
+                    <p>{{ project.client }}</p>
+                  </article>
+                </div>
+              {% endfor %}
+              
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+</section>
 {% endeditable_model %}
 
 {% endblock %}

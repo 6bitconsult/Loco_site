@@ -51,3 +51,9 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
     # text_formatting: html # html (uses rich text editor), markdown or text (uses plain text editor)
+- project:
+    label: Project # Human readable name of the field
+    type: has_many
+    class_name: projects  
+    inverse_of: projects_category
+    ui_enabled: true
