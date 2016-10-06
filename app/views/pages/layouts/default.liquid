@@ -13,8 +13,14 @@ is_layout: false
 
     <link rel="shortcut icon" href="{{ 'favicon.png' | theme_image_url }}">
 
-    {{ 'bootstrap.css' | stylesheet_tag }}
-    {{ 'application.css' | stylesheet_tag }}
+    <link href='https://fonts.googleapis.com/css?family=Poppins:400,300,500,600,700' rel='stylesheet' type='text/css'>
+
+    <!--{{ 'bootstrap.css' | stylesheet_tag }}
+    {{ 'application.css' | stylesheet_tag }}-->
+
+    {{ 'revolution-slider.css' | stylesheet_tag }}
+    {{ 'style.css' | stylesheet_tag }}
+    {{ 'responsive.css' | stylesheet_tag }}
   </head>
   <body>
     {% include 'nav' %}
@@ -24,8 +30,13 @@ is_layout: false
 
     {% include 'footer' %}
 
-    {{ 'jquery.min.js' | javascript_tag }}
+    <!--{{ 'jquery.min.js' | javascript_tag }}
     {{ 'bootstrap.min.js' | javascript_tag }}
-    {{ 'application.js' | javascript_tag }}
+    {{ 'application.js' | javascript_tag }}-->
+
+    {{ 'plugins.js' | javascript_tag }}
+    {{ 'main.js' | javascript_tag }}
+
+
   </body>
 </html>

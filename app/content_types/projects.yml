@@ -36,7 +36,7 @@ order_by: manually
 # entry_template: '<a href="{{ link }}">{{ entry._label }}</a>' # The default template
 
 # A list describing each field
-fields:
+fields: 
 - name: # The lowercase, underscored name of the field
     label: Name # Human readable name of the field
     type: string
@@ -44,14 +44,12 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
 
-- client:
-    label: client
-    type: belongs_to
+- client: # The lowercase, underscored name of the field
+    label: Client # Human readable name of the field
+    type: string
     required: false
-    hint: A description of the field for the editors
+    hint: Explanatory text displayed in the back office
     localized: false
-    target: clients
-    ui_enabled: true
 
 - description: # The lowercase, underscored name of the field
     label: Description # Human readable name of the field
@@ -67,12 +65,3 @@ fields:
     required: false
     hint: Explanatory text displayed in the back office
     localized: false
-
-- category:
-    label: Category
-    type: belongs_to
-    required: false
-    hint: A description of the field for the editors
-    localized: false
-    target: projects_category
-    ui_enabled: true
