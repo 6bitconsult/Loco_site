@@ -31,6 +31,68 @@ published: true
 
 {% block content/main, short_name: true %}
 
+<!-- Page Title -->
+<section class="breadcrumb-wrap">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Our Services</h1>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services post -->
+<section class="page-wrap page-services popup-gallery">
+  <div class="container">
+    <div class="row">
+      <main class="main-content">
+        <div class="content">
+{% for services in contents.services %}
+          <div class="col-sm-4">
+            <article>
+              <p class="media"><img class="media-object" src="{{ services.image.url | default: 'http://www.freedigitalphotos.net/images/previews/businessman-holding-touch-screen-100255163.jpg' | resize: '100x100#' }}" alt="{{ services.title }}"></p>
+              <h3><a href="service-single.html"> {{ services.title }}</a></h3>
+              <p> {{ services.description }} </p>
+            </article>
+          </div>
+{% endfor %}
+        </div>
+      </main>
+    </div>
+  </div>
+</section>
+<section class="more-info">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-7">
+        <div class="text">
+          <h3>Need more information?</h3>
+          <p>We can call you and help with your problem, just leave us your phone number.</p>
+        </div>
+      </div>
+      <div class="col-sm-5">
+        <div class="subscribe">
+          <div class="subscribe">
+          <form method="post" id="subscribeForm" class="subscribe-form" action="./contact/subscribe-process.php">
+            <label>
+              <input type="email" id="email02" name="email02" placeholder="Enter you email..." value="" required="required" title="Enter your email">
+            </label>
+            <input type="submit" class="submit" value="Subscribe">
+          </form>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
 {% editable_model services %}
 <div class="row">
   <div class="col-sm-12">
