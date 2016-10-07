@@ -65,3 +65,8 @@ fields:
     required: false
     hint: Explanatory text displayed in the back office
     localized: false
+
+- category:
+    label: Category # Human readable name of the field
+    type: belongs_to
+    class_name: projects_category
