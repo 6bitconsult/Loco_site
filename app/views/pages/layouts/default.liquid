@@ -21,6 +21,8 @@ is_layout: false
     {{ 'revolution-slider.css' | stylesheet_tag }}
     {{ 'style.css' | stylesheet_tag }}
     {{ 'responsive.css' | stylesheet_tag }}
+
+
   </head>
   <body>
     {% include 'nav' %}
@@ -36,7 +38,8 @@ is_layout: false
 
     {{ 'plugins.js' | javascript_tag }}
     {{ 'main.js' | javascript_tag }}
-
-
+    {{ 'jquery.themepunch.tools.min.js' | javascript_tag }}
+    {{ 'jquery.themepunch.revolution.min.js' | javascript_tag }}
+    {{ 'slider.js' | javascript_tag }}
   </body>
 </html>

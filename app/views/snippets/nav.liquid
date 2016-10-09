@@ -44,14 +44,22 @@
                  <li class="{% if page.handle == 'home' %}active{% endif %}">
                    <a href="{% path_to home %}">Home</a>
                  </li>
-                 {% for page_in_nav in site.pages %}
-                   {% if page_in_nav.depth == 1 %}
-                     <li class="{% if page.fullpath == page_in_nav.fullpath %}active{% endif %}">
-                       {% link_to page_in_nav %}
-                   {% endif %}
-                 {% endfor %}
+                 <li class="{% if page.fullpath == "about" %}active{% endif %}">
+                  <a href="/about">About</a>
+                 </li>
+                 <li class="{% if page.fullpath == "services" %}active{% endif %}">
+                  <a href="/services">Services</a>
+                 </li>
+                 <li class="{% if page.fullpath == "projects" %}active{% endif %}">
+                  <a href="/projects">Work</a>
+                 </li>
+                 <li class="{% if page.fullpath == "products" %}active{% endif %}">
+                  <a href="/products">Products</a>
+                 </li>
+                 <li class="{% if page.fullpath == "news" %}active{% endif %}">
+                  <a href="/news">News</a>
+                 </li>
                </ul><!-- /.menu -->
-
             </nav>
           </div>
           <div class="col-sm-3">
