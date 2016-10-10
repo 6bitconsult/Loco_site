@@ -2402,3 +2402,9 @@ ul.filter li.active a {
 .margin70{
 	margin-top: 70px !important;
 }
+
+.tp-simpleresponsive .caption, .tp-simpleresponsive .tp-caption {
+    position: absolute;
+    -webkit-font-smoothing: antialiased !important;
+    left: 90.5px !important;
+}

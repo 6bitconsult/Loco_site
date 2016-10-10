@@ -52,6 +52,11 @@ fields:
     localized: false
     # text_formatting: html # html (uses rich text editor), markdown or text (uses plain text editor)
 
+- date: # The lowercase, underscored name of the field
+    label: Date # Human readable name of the field
+    type: date
+    required: false
+
 - image: # The lowercase, underscored name of the field
     label: Image # Human readable name of the field
     type: file

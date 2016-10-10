@@ -53,7 +53,7 @@ published: true
               {% for product_ in contents.products %}
                 <article class="{{ product_.category.title }}">
                   <p class="media">
-                    <img src="{{product_.image.url  | default: 'http://loremflickr.com/100/100' | resize: '470x400#' }}" alt="{{product_.title}}" />
+                    <img src="{{product_.image.url  | default: 'http://loremflickr.com/150/150' | resize: '470x400#' }}" alt="{{product_.title}}" />
                   </p>
                   <h3>{{product_.title}}</h3>
                   <span class="position">{{product_.subtitle}}</span>
