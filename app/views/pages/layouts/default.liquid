@@ -41,5 +41,20 @@ is_layout: false
     {{ 'jquery.themepunch.tools.min.js' | javascript_tag }}
     {{ 'jquery.themepunch.revolution.min.js' | javascript_tag }}
     {{ 'slider.js' | javascript_tag }}
+    {{ 'https://maps.googleapis.com/maps/api/js?sensor=false' | javascript_tag }}
+    {{ 'gmap3.min.js' | javascript_tag }}
+
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+            $(".shareLink").click(function(){
+                var url = $(this).attr("href");
+                url = url.replace("#url", location.href);
+                $(this).attr("href", url);
+            });
+        });
+
+    </script>
+
   </body>
 </html>

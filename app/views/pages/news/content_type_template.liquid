@@ -1,0 +1,168 @@
+---
+title: Content type template
+
+# true if the page is included in the menu
+listed: true
+
+# true if the page is published
+published: true
+
+# true if the page can be used as a layout for new pages created by the editors
+# is_layout: true
+
+# position among sibling pages
+# position: 1
+
+# sets a redirection to the given url (301)
+# redirect_url: "<url to a page or to a remote url>"
+
+# other unique identifier of this page. To be used with the path_to liquid tag.
+# handle: my-page-handle
+
+# content type that this page is templatizing
+content_type: news
+
+
+# editable_elements:
+#   'some_block/some_slug': "<text>"
+#   'some_block/some_slug': "<relative path to the file under the public/samples folder>"
+---
+{% extends 'layouts/simple' %}
+
+{% block content/main, short_name: true %}
+
+
+{% block page_title %}
+  <!-- Page Title -->
+  <section class="breadcrumb-wrap">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h1>News</h1>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+<!-- Blog post -->
+  <section class="page-wrap blog-post blog-single">
+    <div class="container">
+      <div class="row">
+        <main class="main-content" style="width: 75%; float: left;">
+          <div class="content">
+            <article class="post clearfix">
+              <div class="feature-post">
+                <p class="image">
+                  <img src="{{ news.image.url | default: 'http://loremflickr.com/1200/600' | resize: '1200x600#' }}" alt="image">
+                </p>
+              </div><!-- /.feature-post -->
+              <h2 class="title-post">
+                <a href="blog-single.html">{{news.title}}</a>
+              </h2><!-- /.title-post -->
+              <div class="meta-post">
+                <span class="date">January 22, 2016</span>
+                <span class="tags"><a href="#">Finance,</a><a href="#">Leasing</a></span>
+              </div><!-- /.meta-post -->
+              <div class="entry-post">
+                {{news.body}}
+              </div><!-- /.entry-post -->
+
+              <div class="tags-share">
+                <div class="tags">
+                  <span>Tags: </span>
+                  <ul>
+                    <li><a href="#">Business,</a></li>
+                    <li><a href="#">Tax,</a></li>
+                    <li><a href="#">Finance</a></li>
+                  </ul>
+                </div>
+                <div class="share">
+                  <span>Share: </span>
+                  <ul>
+                    <li><a class="shareLink" href="https://www.facebook.com/sharer/sharer.php?u=#url&amp;src=sdkpreparse"><i class="fa fa-facebook"></i></a></li>
+                    <li><a class="shareLink" href="https://twitter.com/intent/tweet?text=#url"><i class="fa fa-twitter"></i></a></li>
+                    <li><a class="shareLink" href="https://plus.google.com/share?url=#url"><i class="fa fa-google-plus"  aria-hidden="true"></i></a></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="author clearfix">
+                <p class="avatar"><img src="{{ 'http://loremflickr.com/150/150' | resize: '150x150#' }}" alt="avatar"></p>
+                <p class="description"><span class="name">Charles Rodriguez</span>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias</p>
+              </div>
+              <div class="comment">
+                <div class="comment-list">
+
+                </div>
+                <div class="comment-reply">
+                  <h3 class="reply-title">Leave a comment</h3>
+                  <form action="#" method="post" id="commentform" class="commentform">
+                    <p class="author">
+                      <input id="author" name="author" placeholder="Your Name" type="text" value="" size="30" aria-required="true" required="required">
+                    </p>
+                    <p class="email">
+                      <input id="email" name="email" placeholder="Your Email" type="email" value="" size="30" aria-required="true" required="required">
+                    </p>
+                    <p class="comment">
+                      <textarea id="comment" name="comment" placeholder="Message" cols="45" rows="8" aria-required="true" required="required"></textarea>
+                    </p>
+                    <p class="form-submit">
+                      <input name="submit" type="submit" value="Send Message">
+                    </p>
+                  </form>
+                </div>
+              </div>
+            </article>
+          </div>
+        </main>
+        <aside class="sidebar">
+          <div class="widget widget-categories">
+            <h3 class="widget-title">Categories</h3>
+            <ul>
+              {% for nc in contents.news_category %}
+                <li><a  href="/news"> {{nc.title}} </a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="widget widget-recent-posts">
+            <h3 class="widget-title">Recent Posts</h3>
+            {% paginate contents.news by 5 %}
+              {% for _news in paginate.collection %}
+                <article class="clearfix">
+                  <div class="wrapper">
+                    <div class="media">
+                      <a href="blog-single.html">
+                      <img src="{{ _news.image.url | default: 'http://loremflickr.com/100/80' | resize: '100x80#' }}" alt="photo"></a>
+                    </div>
+                    <div class="content">
+                      <a href="blog-single.html">{{_news.title}}</a>
+                    </div>
+                  </div>
+                </article>
+              {% endfor %}
+            {% endpaginate %}
+          </div>
+          <div class="widget widget-tag-cloud">
+            <h3 class="widget-title">Featured Tags</h3>
+            <div class="tagcloud">
+              <a href="#" title="example">example,</a>
+              <a href="#" title="Gallery">Gallery,</a>
+              <a href="#" title="Image">Image,</a>
+              <a href="#" title="quote">quote,</a>
+              <a href="#" title="tag">tag,</a>
+              <a href="#" title="Video">Video,</a>
+              <a href="#" title="PSD Teplates">PSD Teplates,</a>
+              <a href="#" title="Business">Business,</a>
+              <a href="#" title="Portfolio">Portfolio,</a>
+              <a href="#" title="Construction">Construction,</a>
+              <a href="#" title="One Page">One Page</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+

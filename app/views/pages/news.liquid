@@ -51,14 +51,11 @@ published: true
       <div class="row">
         <main class="main-content">
           <div class="content">
-
-
-            {% paginate contents.news by 5 %}
-              {% for news in paginate.collection %}
+            {% for news in contents.news %}
               <article class="post clearfix">
   							<div class="media">
   								<p class="image">
-  									<img src="{{ news.image.url | default: 'http://loremflickr.com/100/100' | resize: '470x400#' }}" alt="{{ news.title }}">
+  									<img src="{{ news.image.url | default: 'http://loremflickr.com/370/300' | resize: '370x300#' }}" alt="{{ news.title }}">
   								</p>
   							</div><!-- /.media -->
   							<h2 class="title-post">
@@ -72,13 +69,10 @@ published: true
   								<p>{{ news.body }}</p>
   							</div><!-- /.entry-post -->
   							<div class="readmore">
-  								<p><a href="/events/{{ news._slug }}">Continue Reading</a></p>
+  								<p><a href="/news/{{ news._slug }}">Continue Reading</a></p>
   							</div>
   						</article>
-              {% endfor %}
-              {% include 'pagination' with paginate %}
-            {% endpaginate %}
-
+            {% endfor %}
           </div>
         </main>
 
