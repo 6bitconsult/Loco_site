@@ -62,8 +62,12 @@ content_type: news
                 <a href="blog-single.html">{{news.title}}</a>
               </h2><!-- /.title-post -->
               <div class="meta-post">
-                <span class="date">January 22, 2016</span>
-                <span class="tags"><a href="#">Finance,</a><a href="#">Leasing</a></span>
+                <span class="date">{{ news.date | localized_date: '%B %d, %Y ' }}</span>
+                <span class="tags">
+                  {% for tags_ in news.tags %}
+                    <a href="#" title="{{tags_.title}}">{{tags_.title}},</a>
+                  {% endfor %}
+                </span>
               </div><!-- /.meta-post -->
               <div class="entry-post">
                 {{news.body}}
@@ -73,9 +77,9 @@ content_type: news
                 <div class="tags">
                   <span>Tags: </span>
                   <ul>
-                    <li><a href="#">Business,</a></li>
-                    <li><a href="#">Tax,</a></li>
-                    <li><a href="#">Finance</a></li>
+                    {% for tags_ in news.tags %}
+                      <a href="#" title="{{tags_.title}}">{{tags_.title}},</a>
+                    {% endfor %}
                   </ul>
                 </div>
                 <div class="share">
@@ -88,8 +92,13 @@ content_type: news
                 </div>
               </div>
               <div class="author clearfix">
-                <p class="avatar"><img src="{{ 'http://loremflickr.com/150/150' | resize: '150x150#' }}" alt="avatar"></p>
-                <p class="description"><span class="name">Charles Rodriguez</span>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias</p>
+                <p class="avatar">
+                  <img src="{{news.author.image.url | default: 'http://loremflickr.com/150/150' | resize: '150x150#' }}" alt="avatar">
+                </p>
+                <p class="description">
+                  <span class="name">{{news.author.name}}</span>
+                  {{news.author.description}}
+                </p>
               </div>
               <div class="comment">
                 <div class="comment-list">
@@ -132,11 +141,11 @@ content_type: news
                 <article class="clearfix">
                   <div class="wrapper">
                     <div class="media">
-                      <a href="blog-single.html">
+                      <a href="/news/{{ _news._slug }}">
                       <img src="{{ _news.image.url | default: 'http://loremflickr.com/100/80' | resize: '100x80#' }}" alt="photo"></a>
                     </div>
                     <div class="content">
-                      <a href="blog-single.html">{{_news.title}}</a>
+                      <a href="/news/{{ _news._slug }}">{{_news.title}}</a>
                     </div>
                   </div>
                 </article>
@@ -146,17 +155,9 @@ content_type: news
           <div class="widget widget-tag-cloud">
             <h3 class="widget-title">Featured Tags</h3>
             <div class="tagcloud">
-              <a href="#" title="example">example,</a>
-              <a href="#" title="Gallery">Gallery,</a>
-              <a href="#" title="Image">Image,</a>
-              <a href="#" title="quote">quote,</a>
-              <a href="#" title="tag">tag,</a>
-              <a href="#" title="Video">Video,</a>
-              <a href="#" title="PSD Teplates">PSD Teplates,</a>
-              <a href="#" title="Business">Business,</a>
-              <a href="#" title="Portfolio">Portfolio,</a>
-              <a href="#" title="Construction">Construction,</a>
-              <a href="#" title="One Page">One Page</a>
+              {% for _news in contents.tags %}
+                <a href="#" title="{{_news.title}}">{{_news.title}},</a>
+              {% endfor %}
             </div>
           </div>
         </aside>

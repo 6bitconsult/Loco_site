@@ -1,8 +1,8 @@
 # Human readable name of this type
-name: News
+name: Tags
 
 # Lowercase, underscored handle used to access this type
-slug: news
+slug: tags
 
 # Explanatory text displayed in the back-office
 description: A description of the content type for the editors
@@ -36,7 +36,7 @@ order_by: manually
 # entry_template: '<a href="{{ link }}">{{ entry._label }}</a>' # The default template
 
 # A list describing each field
-fields:
+fields: 
 - title: # The lowercase, underscored name of the field
     label: Title # Human readable name of the field
     type: string
@@ -44,39 +44,9 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
 
-- body: # The lowercase, underscored name of the field
-    label: Body # Human readable name of the field
-    type: text
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-    # text_formatting: html # html (uses rich text editor), markdown or text (uses plain text editor)
-
-- date: # The lowercase, underscored name of the field
-    label: Date # Human readable name of the field
-    type: date
-    required: false
-
-- image: # The lowercase, underscored name of the field
-    label: Image # Human readable name of the field
-    type: file
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-
-- category:
-    label: Category
-    type: string
-    required: true
-
-- tags:
-    label: Tags
+- news:
+    label: News
     type: many_to_many
-    class_name: tags
-    inverse_of: news
+    class_name: news
+    inverse_of: tags
     ui_enabled: true
-
-- author:
-    label: Author
-    type: belongs_to
-    class_name: author

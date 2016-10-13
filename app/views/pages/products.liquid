@@ -73,9 +73,15 @@ published: true
           </ul>
         </div>
         <div class="brochure">
-          <h3>Our Brochure</h3>
-          <p>View our 2016 financial prospectus brochure for an easy to read guide on all of the services offered.</p>
-          <p class="btn-cons btn-download"><a href="#" onclick="print()">Download .PDF</a></p>
+
+          <h3>{{contents.brochure.first.title}}</h3>
+          <p>{{contents.about_top.first.description}}</p>
+          <p class="btn-cons btn-download">
+            <a target="blank" href="{{contents.about_top.first.file_.url | default: '/samples/brochure/test.pdf'}}" >
+              Download .PDF
+            </a>
+          </p>
+
         </div>
         <div class="testimonials-sidebar">
           <h3>Testimonials</h3>
