@@ -45,13 +45,21 @@ is_layout: true
         </div>
         <div class="col-sm-5">
           <div class="subscribe">
-            <div class="subscribe">
-            <form method="post" id="subscribeForm" class="subscribe-form" action="./contact/subscribe-process.php">
+            <div class="subscribe subscribe-form">
+            {% model_form 'email_information', success: '/contact', error: '/' %}
+              {% if email_information.errors %}
+                <p>The following errors occured:</p>
+                <ul>
+                {% for error in email_information.errors %}
+                  <li>{{error[0] | capitalize}} -  {{error[1]}}</li>
+                {% endfor %}
+                </ul>
+              {% endif %}
               <label>
-                <input type="email" id="email02" name="email02" placeholder="Enter you email..." value="" required="required" title="Enter your email">
+                <input type="email" id="email02" name="content[email]" placeholder="Enter you email..." value="{{email_information.name}}" required="required" title="Enter your email">
               </label>
               <input type="submit" class="submit" value="Subscribe">
-            </form>
+            {% endmodel_form %}
           </div>
           </div>
         </div>

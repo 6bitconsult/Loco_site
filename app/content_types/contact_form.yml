@@ -1,14 +1,14 @@
 # Human readable name of this type
-name: Products
+name: Contact form
 
 # Lowercase, underscored handle used to access this type
-slug: products
+slug: contact_form
 
 # Explanatory text displayed in the back-office
 description: A description of the content type for the editors
 
 # Slug of field used to identify entries by default, such as the title
-label_field_name: title
+label_field_name: email
 
 # Valid values: manually, created_at, updated_at, or the slug of any field
 order_by: manually
@@ -36,37 +36,32 @@ order_by: manually
 # entry_template: '<a href="{{ link }}">{{ entry._label }}</a>' # The default template
 
 # A list describing each field
-fields:
-- title: # The lowercase, underscored name of the field
-    label: Title # Human readable name of the field
+fields: 
+- email: # The lowercase, underscored name of the field
+    label: Email # Human readable name of the field
     type: string
     required: true
     hint: Explanatory text displayed in the back office
     localized: false
 
-- subtitle: # The lowercase, underscored name of the field
-    label: Subtitle # Human readable name of the field
+- fullName: # The lowercase, underscored name of the field
+    label: Fullname # Human readable name of the field
     type: string
     required: false
     hint: Explanatory text displayed in the back office
     localized: false
 
-- description: # The lowercase, underscored name of the field
-    label: Description # Human readable name of the field
+- phone: # The lowercase, underscored name of the field
+    label: Phone # Human readable name of the field
+    type: string
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false
+
+- message: # The lowercase, underscored name of the field
+    label: Message # Human readable name of the field
     type: text
     required: false
     hint: Explanatory text displayed in the back office
     localized: false
     # text_formatting: html # html (uses rich text editor), markdown or text (uses plain text editor)
-
-- image: # The lowercase, underscored name of the field
-    label: Image # Human readable name of the field
-    type: file
-    required: false
-    hint: Explanatory text displayed in the back office
-    localized: false
-
-- category:
-    label: Category # Human readable name of the field
-    type: belongs_to
-    class_name: products_category

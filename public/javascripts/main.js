@@ -143,7 +143,9 @@
 			});
 			$('.filter li').on('click',function() {
 				$('.filter li').removeClass('active');
+				$('.filter li a.custom.active').removeClass('active');
 				$(this).addClass('active');
+				$(this).find("a.custom").addClass('active');
 				var selector = $(this).find("a").attr('data-filter');
 				$container.isotope({ filter: selector });
 				return false;

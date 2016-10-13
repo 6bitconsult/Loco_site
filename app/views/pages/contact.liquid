@@ -78,25 +78,33 @@ published: true
                 <p>Phasellus vulputate, lectus eu consequat scelerisque, felis odio consequat enim, ut vulputate elit lacus nec ipsum. Vivamus non sollicitudin eros. Nunc ut pulvinar felis. Ut lectus orci, cursus ac semper nec, lobortis nec urna.</p>
               </div>
               <div class="contact-form">
-                <form id="contact-form" method="post" action="./contact/contact-process.php">
+                {% model_form 'contact_form', success: '/contact', error: '/' %}
+                  {% if contact_form.errors %}
+                    <p>The following errors occured:</p>
+                    <ul>
+                    {% for error in contact_form.errors %}
+                      <li>{{error[0] | capitalize}} -  {{error[1]}}</li>
+                    {% endfor %}
+                    </ul>
+                  {% endif %}
                   <div class="col-sm-6">
                     <div class="input-text">
-                              <input type="text" name="name" class="input-name form-control" placeholder="Full name" required="required">
+                              <input type="text" name="content[fullName]" class="input-name form-control" placeholder="Full name" required="required">
                           </div>
                           <div class="input-email">
-                              <input type="email" name="email" class="input-email form-control" placeholder="Email" required="required">
+                              <input type="email" name="content[email]" class="input-email form-control" placeholder="Email" required="required">
                           </div>
                           <div class="input-phone">
-                              <input type="text" name="phone" class="input-phone form-control" placeholder="Phone">
+                              <input type="text" name="content[phone]" class="input-phone form-control" placeholder="Phone">
                           </div>
                   </div>
                   <div class="col-sm-6">
                           <div class="textarea-message">
-                              <textarea name="message" placeholder="Message" rows="3" required="required"></textarea>
+                              <textarea name="content[message]" placeholder="Message" rows="3" required="required"></textarea>
                           </div>
                           <button type="submit" class="submit-btn">Send Now<i class="icon-paper-plane"></i></button>
                   </div>
-                </form>
+                {% endmodel_form %}
               </div>
             </div>
           </div>
