@@ -19,12 +19,18 @@
         <div class="info">
           <div class="address">
             <p class="icon"><i class="ion-android-pin"></i></p>
-            <p class="text">Call Today 020 8567 0707<br><span>51 Uxbridge Road, San Francisco W7 3PX</span></p>
+
+            <p class="text">
+              Call Today <a href="tel:{{ contents.header_desing.first.phone1 }}">{{ contents.header_desing.first.phone }}</a>
+              <br>
+              <a href="{{ contents.header_desing.first.address_maps }}"><span>{{ contents.header_desing.first.address }}</span></a>
+            </p>
           </div>
+          <!--
           <div class="open-hours">
             <p class="icon"><i class="ion-android-watch"></i></p>
             <p class="text">Open Hours<br><span>Mon - Sat: 8 am - 5 pm, Sunday: CLOSED </span></p>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>

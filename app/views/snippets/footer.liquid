@@ -11,9 +11,11 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="footer-info">
-          <p class="footer-logo"><img src="images/common/logo.png" alt="Consultant"></p>
-          <p class="description">Lorem ipsum dolor sit consectetur adipiscing elit <br>sed do eiusmod tempor incididunt ut labore et <br>dolore magna veniam aliqua.</p>
-          <p class="phone">2700 - 345 - 9889 <span>support24.7@domain.com</span></p>
+          <p class="footer-logo">
+            <img src="{{ contents.footer_design.first.url | default: 'images/common/logo.png' | resize: '243x126#' }}" alt="Consultant">
+          </p>
+          <p class="description">{{contents.footer_design.first.description}}</p>
+          <p class="phone"><a href="tel:{{ contents.footer_design.first.phone }}">{{contents.footer_design.first.phone}} </a><a href="mailto:{{ contents.footer_design.first.email }}"><span>{{contents.footer_design.first.email}}</span></a></p>
         </div>
       </div>
       <div class="col-sm-8">
@@ -21,12 +23,12 @@
           <nav class="footernav01">
             <h3>Follow us</h3>
             <ul class="followus">
-              <li><a href="#"><i class="ion-social-facebook"></i>Facebook</a></li>
-              <li><a href="#"><i class="ion-social-twitter"></i>Twitter</a></li>
-              <li><a href="#"><i class="ion-social-linkedin"></i>Linkedin</a></li>
-              <li><a href="#"><i class="ion-social-youtube"></i>Youtube</a></li>
+              <li><a href="{{ contents.footer_design.first.facebookUrl }}"><i class="ion-social-facebook"></i>Facebook</a></li>
+              <li><a href="{{ contents.footer_design.first.twitterUrl }}"><i class="ion-social-twitter"></i>Twitter</a></li>
+              <li><a href="{{ contents.footer_design.first.linkedInUrl }}"><i class="ion-social-linkedin"></i>Linkedin</a></li>
+              <li><a href="{{ contents.footer_design.first.youtubeUrl }}"><i class="ion-social-youtube"></i>Youtube</a></li>
              </ul>
-          </nav>
+          </nav><!--
           <nav class="footernav02">
             <h3>Our services</h3>
             <ul class="ourservices">
@@ -36,13 +38,10 @@
               <li><a href="#">Estate Planning</a></li>
               <li><a href="#">Business Planning</a></li>
              </ul>
-          </nav>
+          </nav>-->
           <nav class="footernav03">
             <h3>Business hours</h3>
-            <span>Our suppoer available to help you 24 hours a day, seven days week</span>
-            <p>Monday-Saturday: ............... 8.00-18.00</p>
-            <p>Sunday: ............................................ Closed</p>
-            <p>Calendar Events: .......................... Closed</p>
+            {{ contents.footer_design.first.business_hours }}
           </nav>
         </div>
       </div>
@@ -52,7 +51,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-10">
-          <p class="copyright">© 2016 Designed by NthPsd. All rights reserved</p>
+          <p class="copyright">©2016 All Rights Reserved</p>
         </div><!-- /.col-md-10 -->
         <div class="col-sm-2">
           <p class="totop"><a href="#">Back Top<img src="images/common/icon-totop.png" alt="back top"></a></p>
