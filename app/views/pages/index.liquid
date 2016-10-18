@@ -70,7 +70,7 @@ handle: home
                   <p class="image">
                     <img src="{{news_.image.url  | default: 'http://loremflickr.com/300/240' | resize: '300x240#' }}" alt="image">
                   </p>
-                  <p class="date">24<span>Mar</span></p>
+                  <p class="date">{{ news_.date | localized_date: '%d' }}<span>{{ news_.date | localized_date: '%b' }}</span></p>
                 </div><!-- /.media -->
                 <h2 class="title-post">
                   <a href="/news/{{ news_._slug }}">{{news_.title}}</a>

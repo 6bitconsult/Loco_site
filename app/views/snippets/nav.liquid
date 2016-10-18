@@ -1,11 +1,11 @@
-<!-- Preloader -->
+<!-- Preloader 
 <div class="preloader">
   <div class="clear-loading loading-effect-2">
     <span></span>
   </div>
 </div>
-
-<!-- Top Bar --->
+-->
+<!-- Top Bar -->
 
 <div class="header-top">
   <div class="container">
@@ -13,9 +13,10 @@
       <div class="col-sm-12">
         <p id="logo" class="logo">
           <a href="{% path_to home %}" rel="home">
-            <img src="images/common/logo.png" alt="brainstorm" />
+            <img src="{{ contents.header_desing.first.logo.url }}" alt="brainstorm" />
           </a>
-        </p><!-- /.logo -->
+        </p>
+        <!-- /.logo -->
         <div class="info">
           <div class="address">
             <p class="icon"><i class="ion-android-pin"></i></p>

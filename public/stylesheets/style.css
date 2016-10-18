@@ -2270,12 +2270,12 @@ ul.filter li.active a {
 	margin-bottom: 32px;
 }
 .footer .footer-info p.phone {
-	padding-left: 35px;
+	/*padding-left: 35px;*/
 	font-size: 20px;
 	font-weight: 500;
 	left: 24px;
 	color: #2e5797;
-	background: url(../images/common/icon-phone.png) no-repeat 0 0;
+	/*background: url(../images/common/icon-phone.png) no-repeat 0 0;*/
 }
 .footer .footer-info p.phone span {
 	display: block;

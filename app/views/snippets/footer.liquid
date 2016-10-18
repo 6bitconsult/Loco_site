@@ -11,8 +11,8 @@
     <div class="row">
       <div class="col-sm-4">
         <div class="footer-info">
-          <p class="footer-logo">
-            <img src="{{ contents.footer_design.first.url | default: 'images/common/logo.png' | resize: '243x126#' }}" alt="Consultant">
+          <p class="footer-logo"> 
+            <img src="{{ contents.footer_design.first.logo.url | default: 'images/common/logo.png' | resize: '243x126#' }}" alt="Consultant">
           </p>
           <p class="description">{{contents.footer_design.first.description}}</p>
           <p class="phone"><a href="tel:{{ contents.footer_design.first.phone }}">{{contents.footer_design.first.phone}} </a><a href="mailto:{{ contents.footer_design.first.email }}"><span>{{contents.footer_design.first.email}}</span></a></p>
@@ -54,7 +54,7 @@
           <p class="copyright">©2016 All Rights Reserved</p>
         </div><!-- /.col-md-10 -->
         <div class="col-sm-2">
-          <p class="totop"><a href="#">Back Top<img src="images/common/icon-totop.png" alt="back top"></a></p>
+          <p class="totop"><a href="#">Back Top<img src="/images/common/icon-totop.png" alt="back top"></a></p>
         </div>
       </div><!-- /.row -->
     </div>

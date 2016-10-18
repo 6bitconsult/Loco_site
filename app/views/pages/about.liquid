@@ -79,8 +79,14 @@ published: true
             <div class="testimonial" data-items="2" data-itemsdesktop="2" data-itemsdesktopsmall="2" data-itemstablet="1" data-itemsmobile="1" data-slidespeed="1" data-autoplay="true" data-nav="true" data-pagination="true">
               {% for testimonial in contents.testimonials %}
                 <div class="item">
-                  <p class="image"><img src="{{testimonial.image.url  | default: 'http://loremflickr.com/100/100' | resize: '470x400#' }}" alt="testimonial.name"></p>
-                  <p class="text">{{testimonial.description}}<span class="name">{{testimonial.name}}</span><span class="position">{{testimonial.role}}</span></p>
+                  <p class="image">
+                    <img src="{{testimonial.image.url  | default: 'http://loremflickr.com/100/100' | resize: '470x400#' }}" >
+                  </p>
+                  <p class="text">
+                    {{testimonial.description}}
+                    <span class="name">{{testimonial.name}}</span>
+                    <span class="position">{{testimonial.role}}</span>
+                  </p>
                 </div>
               {% endfor %}
             </div>
