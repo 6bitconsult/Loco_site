@@ -1397,6 +1397,10 @@ div.author {
 	margin-top: 50px;
 	font-size: 14px;
 }
+.toleft{
+	width: 75%; float: left;	
+}
+
 .page-about .sidebar,
 .page-service .sidebar,
 .page-partners .sidebar  {

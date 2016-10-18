@@ -102,7 +102,7 @@ fields:
     localized: false
 
 - business_hours: # The lowercase, underscored name of the field
-    label: Business hours # Human readable name of the field
+    label: Businesshours # Human readable name of the field
     type: text
     required: false
     hint: Explanatory text displayed in the back office

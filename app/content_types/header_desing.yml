@@ -45,7 +45,7 @@ fields:
     localized: false
 
 - phone1: # The lowercase, underscored name of the field
-    label: Phone # Human readable name of the field
+    label: Phone1 # Human readable name of the field
     type: string
     required: true
     hint: Explanatory text displayed in the back office
@@ -59,7 +59,7 @@ fields:
     localized: false
 
 - address_maps: # The lowercase, underscored name of the field
-    label: Address maps # Human readable name of the field
+    label: Addressmaps # Human readable name of the field
     type: text
     required: false
     hint: Explanatory text displayed in the back office

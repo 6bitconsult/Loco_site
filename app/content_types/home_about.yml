@@ -60,14 +60,14 @@ fields:
     # text_formatting: html # html (uses rich text editor), markdown or text (uses plain text editor)
 
 - button_text: # The lowercase, underscored name of the field
-    label: Button text # Human readable name of the field
+    label: Buttontext # Human readable name of the field
     type: string
     required: false
     hint: Explanatory text displayed in the back office
     localized: false
 
 - button_link: # The lowercase, underscored name of the field
-    label: Button link # Human readable name of the field
+    label: Buttonlink # Human readable name of the field
     type: string
     required: false
     hint: Explanatory text displayed in the back office

@@ -7,12 +7,13 @@ handle: home
 
 {% block content/main %}
 
+  {% editable_model slider %}
   <div class="tp-banner-container">
       <div class="tp-banner" >
         <ul>
           {% for slr in contents.slider %}
             <li data-transition="fade" data-slotamount="7" data-masterspeed="300" data-saveperformance="off">
-              <img src="{{slr.image.url  | default: 'http://loremflickr.com/1920/700' | resize: '1920x720#' }}"  alt="slider_1"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+              <img src="{{slr.media.url  | default: 'http://loremflickr.com/1920/700' | resize: '1920x720#' }}"  alt="slider_1"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
               <div class="tp-caption 2 sft tp-resizeme"
                 data-x="center" data-hoffset="-240"
                 data-y="center" data-voffset="-99"
@@ -56,7 +57,7 @@ handle: home
         </ul>
       </div>
   </div>
-
+{% endeditable_model %}
   <section class="news-box">
     <div class="container">
       <div class="row">
@@ -72,13 +73,13 @@ handle: home
                   <p class="date">24<span>Mar</span></p>
                 </div><!-- /.media -->
                 <h2 class="title-post">
-                  <a href="/news/{{ news._slug }}">{{news_.title}}</a>
+                  <a href="/news/{{ news_._slug }}">{{news_.title}}</a>
                 </h2><!-- /.title-post -->
                 <div class="entry-post">
                   <p>{{news_.body}}</p>
                 </div><!-- /.entry-post -->
                 <div class="readmore">
-                  <p><a href="/news/{{ news._slug }}">Continue Reading</a></p>
+                  <p><a href="/news/{{ news_._slug }}">Continue Reading</a></p>
                 </div>
               </article>
             </div>

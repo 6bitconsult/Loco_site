@@ -51,7 +51,7 @@ published: true
           <div class="content">
             <div class="teammember list clearfix portfolio popup-gallery">
               {% for product_ in contents.products %}
-                <article class="item {{product_.category.title}}">
+                <article class="item {{product_.category.code}}">
                   <p class="media">
                     <img src="{{product_.image.url  | default: 'http://loremflickr.com/150/150' | resize: '470x400#' }}" alt="{{product_.title}}" />
                   </p>
@@ -68,20 +68,21 @@ published: true
           <ul  class="filter">
             <li class="active" style="display:block !important;"><a href="#"  class="custom active">All</a></li>
             {% for product_category in contents.products_category %}
-              <li  style="display:block !important;"><a class="custom" data-filter=".{{product_category.title}}" href="#"> {{product_category.title}} </a></li>
+              <li  style="display:block !important;"><a class="custom" data-filter=".{{product_category.code}}" href="#"> {{product_category.title}} </a></li>
             {% endfor %}
           </ul>
         </div>
         <div class="brochure">
 
+          {% editable_model brochure %}
           <h3>{{contents.brochure.first.title}}</h3>
-          <p>{{contents.about_top.first.description}}</p>
+          <p>{{contents.brochure.first.description}}</p>
           <p class="btn-cons btn-download">
-            <a target="blank" href="{{contents.about_top.first.file_.url | default: '/samples/brochure/test.pdf'}}" >
+            <a target="blank" href="{{contents.brochure.first.file_.url | default: '/samples/brochure/test.pdf'}}" >
               Download .PDF
             </a>
           </p>
-
+          {% endeditable_model %}
         </div>
         <div class="testimonials-sidebar">
           <h3>Testimonials</h3>

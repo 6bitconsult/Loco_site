@@ -79,9 +79,9 @@ published: true
                       </div>
                     </div>
                     <div class="col-sm-6">
-                      <p class="img01"><img src="images/pages/img_portfolio-single01.jpg" alt="Business Planning"></p>
-                      <p class="img02"><img src="images/pages/img_portfolio-single02.jpg" alt="Business Planning"></p>
-                      <p class="img03"><img src="images/pages/img_portfolio-single03.jpg" alt="Business Planning"></p>
+                      <p class="img01"><img src="{{project.image.url  | default: 'http://loremflickr.com/570/320' | resize: '570x320#' }}" alt="Business Planning"></p>
+                      <p class="img02"><img src="{{project.image2.url  | default: 'http://loremflickr.com/275/230' | resize: '275x230#' }}" alt="Business Planning"></p>
+                      <p class="img03"><img src="{{project.image3.url  | default: 'http://loremflickr.com/275/230' | resize: '275x230#' }}" alt="Business Planning"></p>
                     </div>
                   </article>
                 </div>

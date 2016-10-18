@@ -66,6 +66,20 @@ fields:
     hint: Explanatory text displayed in the back office
     localized: false
 
+- image2: # The lowercase, underscored name of the field
+    label: Image2 # Human readable name of the field
+    type: file
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false
+
+- image3: # The lowercase, underscored name of the field
+    label: Image3 # Human readable name of the field
+    type: file
+    required: false
+    hint: Explanatory text displayed in the back office
+    localized: false
+
 - category:
     label: Category # Human readable name of the field
     type: belongs_to
