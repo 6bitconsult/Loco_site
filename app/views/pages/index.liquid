@@ -72,13 +72,13 @@ handle: home
                   <p class="date">24<span>Mar</span></p>
                 </div><!-- /.media -->
                 <h2 class="title-post">
-                  <a href="blog-single.html">{{news_.title}}</a>
+                  <a href="/news/{{ news._slug }}">{{news_.title}}</a>
                 </h2><!-- /.title-post -->
                 <div class="entry-post">
                   <p>{{news_.body}}</p>
                 </div><!-- /.entry-post -->
                 <div class="readmore">
-                  <p><a href="blog-single.html">Continue Reading</a></p>
+                  <p><a href="/news/{{ news._slug }}">Continue Reading</a></p>
                 </div>
               </article>
             </div>
@@ -117,7 +117,7 @@ handle: home
                     <img src="{{project.image.url  | default: 'http://loremflickr.com/370/270' | resize: '370x270#' }}" alt="feature post">
                   </a>
                 </p>
-                <h3><a href="blog-single.html">{{project.name}}</a></h3>
+                <h3><a href="projects-detail?title={{ project.name }}">{{project.name}}</a></h3>
               </article>
             </div>
           {% endfor %}
