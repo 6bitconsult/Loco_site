@@ -59,10 +59,10 @@ published: true
   								</p>
   							</div><!-- /.media -->
   							<h2 class="title-post">
-  								<a href="/events/{{ news._slug }}">{{ news.title }}</a>
+  								<a href="/news/{{ news._slug }}">{{ news.title }}</a>
   							</h2><!-- /.title-post -->
   							<div class="meta-post">
-  								<span class="date">January 22, 2016</span>
+  								<span class="date">{{ news.date | localized_date: '%B %d, %Y ' }}</span>
   								<span class="tags"><a href="#">Finance,</a><a href="#">Leasing</a></span>
   							</div><!-- /.meta-post -->
   							<div class="entry-post">
